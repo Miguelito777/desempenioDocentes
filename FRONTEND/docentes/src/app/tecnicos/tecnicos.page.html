@@ -1,0 +1,122 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Datos Técnicos
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-item>
+          <ion-label>Estratégias</ion-label>
+          <ion-select interface="popover" placeholder="" [(ngModel)]="tecnica.estrategica">
+            <ion-select-option *ngFor="let cr of aspectosTecnicos[0].aspectos_tecnicos" [value]="cr" >{{cr.aspecto_tecnico}}</ion-select-option>
+          </ion-select>
+          <ion-buttons slot="end">
+            <ion-button (click)="addEstrategia()">
+              <ion-icon name="add-circle"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item>
+          <ion-label>Técnicas</ion-label>
+          <ion-select interface="popover" placeholder="" [(ngModel)]="tecnica.tecnica">
+            <ion-select-option *ngFor="let cr of aspectosTecnicos[1].aspectos_tecnicos" [value]="cr" >{{cr.aspecto_tecnico}}</ion-select-option>
+          </ion-select>
+          <ion-buttons slot="end">
+            <ion-button (click)="addTecnica()">
+              <ion-icon name="add-circle"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-item>
+      </ion-col>
+      <ion-col>
+        <ion-item>
+          <ion-label>Métodos</ion-label>
+          <ion-select interface="popover" placeholder="" [(ngModel)]="tecnica.metodo">
+            <ion-select-option *ngFor="let cr of aspectosTecnicos[2].aspectos_tecnicos" [value]="cr" >{{cr.aspecto_tecnico}}</ion-select-option>
+          </ion-select>
+          <ion-buttons slot="end">
+            <ion-button (click)="addMetodo()">
+              <ion-icon name="add-circle"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-list>
+          <ion-item *ngFor="let cr of estrategica">
+            <ion-icon name="apps" slot="start"></ion-icon>
+            {{cr.aspecto_tecnico}}
+            <div class="item-note" slot="end">
+              <ion-button shape="round" color="danger" (click)="deleteAlmacen(cr.id)">
+                <ion-icon name="trash"></ion-icon>
+              </ion-button>
+              <!--<ion-button shape="round" color="warning" routerLink="/AlmacenCU/{{cr.id}}">
+                <ion-icon name="create"></ion-icon>
+              </ion-button>-->
+            </div>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+      <ion-col>
+        <ion-list>
+          <ion-item *ngFor="let cr of tecnicaArray">
+            <ion-icon name="apps" slot="start"></ion-icon>
+            {{cr.aspecto_tecnico}}
+            <div class="item-note" slot="end">
+              <ion-button shape="round" color="danger" (click)="deleteAlmacen(cr.id)">
+                <ion-icon name="trash"></ion-icon>
+              </ion-button>
+              <!--<ion-button shape="round" color="warning" routerLink="/AlmacenCU/{{cr.id}}">
+                <ion-icon name="create"></ion-icon>
+              </ion-button>-->
+            </div>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+      <ion-col>
+        <ion-list>
+          <ion-item *ngFor="let cr of metodo">
+            <ion-icon name="apps" slot="start"></ion-icon>
+            {{cr.aspecto_tecnico}}
+            <div class="item-note" slot="end">
+              <ion-button shape="round" color="danger" (click)="deleteAlmacen(cr.id)">
+                <ion-icon name="trash"></ion-icon>
+              </ion-button>
+              <!--<ion-button shape="round" color="warning" routerLink="/AlmacenCU/{{cr.id}}">
+                <ion-icon name="create"></ion-icon>
+              </ion-button>-->
+            </div>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+  </ion-grid> 
+  <ion-button shape="round" color="primary" expand="block" (click)="saveTecnico()">Guardar Tecnicos</ion-button>
+
+  <!--<ion-list>
+    <ion-item *ngFor="let cr of almacenes">
+      <ion-icon name="apps" slot="start"></ion-icon>
+      {{cr.nombre}}
+      <div class="item-note" slot="end">
+        <ion-button shape="round" color="danger" (click)="deleteAlmacen(cr.id)">
+          <ion-icon name="trash"></ion-icon>
+        </ion-button>
+        <ion-button shape="round" color="warning" routerLink="/AlmacenCU/{{cr.id}}">
+          <ion-icon name="create"></ion-icon>
+        </ion-button>
+      </div>
+    </ion-item>
+  </ion-list>-->
+</ion-content>

@@ -1,0 +1,195 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Agregar Docente
+    </ion-title>
+    <!--<ion-buttons slot="end">
+      <ion-button routerLink="/RegistrarDonante/0">
+        <ion-icon name="add-circle"></ion-icon>
+      </ion-button>
+    </ion-buttons>-->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  
+      <!--
+        <ion-list>
+        <ion-item *ngFor="let cr of donantes">
+      <ion-icon name="apps" slot="start"></ion-icon>
+      {{cr.nombre}}
+      <div class="item-note" slot="end">
+          <ion-button shape="round" color="danger" (click)="deleteDonante(cr.id)"><ion-icon name="trash"></ion-icon></ion-button>
+          <ion-button shape="round" color="warning" routerLink="/RegistrarDonante/{{cr.id}}"><ion-icon name="create"></ion-icon></ion-button>
+      </div>
+    </ion-item>
+</ion-list>
+  -->
+  <ion-row>
+    <ion-col>
+        <ion-item>
+            <ion-label position="floating">Nombres</ion-label>
+            <ion-input [(ngModel)]="docente.nombres"></ion-input>
+          </ion-item>
+    </ion-col>
+    <ion-col>
+        <ion-item>
+            <ion-label position="floating">Apellidos</ion-label>
+            <ion-input [(ngModel)]="docente.apellidos"></ion-input>
+          </ion-item>
+    </ion-col>
+    <ion-col>
+        <ion-item>
+            <ion-label position="floating">Apellido Casada</ion-label>
+            <ion-input [(ngModel)]="docente.apellido_casada"></ion-input>
+          </ion-item>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+      <ion-col>
+          <ion-item>
+              <ion-label position="floating">Fecha Nacimiento</ion-label>
+              <ion-input [(ngModel)]="docente.fecha_nacimiento"></ion-input>
+            </ion-item>
+      </ion-col>
+      <ion-col>
+          <ion-item>
+              <ion-label position="floating">Lugar Nacimiento</ion-label>
+              <ion-input [(ngModel)]="docente.lugar_nacimiento"></ion-input>
+            </ion-item>
+      </ion-col>
+      <ion-col>
+          <ion-item>
+              <ion-label position="floating">Direccion</ion-label>
+              <ion-input [(ngModel)]="docente.direccion"></ion-input>
+            </ion-item>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col>
+            <ion-item>
+                <ion-label position="floating">Estado civil</ion-label>
+                <ion-input [(ngModel)]="docente.estado_civil"></ion-input>
+              </ion-item>
+        </ion-col>
+        <ion-col>
+            <ion-item>
+                <ion-label position="floating">Genero</ion-label>
+                <ion-input [(ngModel)]="docente.genero"></ion-input>
+              </ion-item>
+        </ion-col>
+        <ion-col>
+            <ion-item>
+                <ion-label position="floating">DPI</ion-label>
+                <ion-input [(ngModel)]="docente.dpi"></ion-input>
+              </ion-item>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+          <ion-col>
+              <ion-item>
+                  <ion-label position="floating">Nit</ion-label>
+                  <ion-input [(ngModel)]="docente.nit"></ion-input>
+                </ion-item>
+          </ion-col>
+          <ion-col>
+              <ion-item>
+                  <ion-label position="floating">Teléfono</ion-label>
+                  <ion-input [(ngModel)]="docente.telefono"></ion-input>
+                </ion-item>
+          </ion-col>
+          <ion-col>
+              <ion-item>
+                  <ion-label position="floating">Correo Electronico</ion-label>
+                  <ion-input [(ngModel)]="docente.correo_electronico"></ion-input>
+                </ion-item>
+          </ion-col>
+        </ion-row>
+        <hr>
+        <br><br>
+
+        <ion-row>
+            <ion-col>
+                <ion-item>
+                    <ion-label position="floating">Nombres</ion-label>
+                    <ion-input [(ngModel)]="docente.nombres"></ion-input>
+                  </ion-item>
+            </ion-col>
+            <ion-col>
+                <ion-item>
+                    <ion-label position="floating">Apellidos</ion-label>
+                    <ion-input [(ngModel)]="docente.apellidos"></ion-input>
+                  </ion-item>
+            </ion-col>
+            <ion-col>
+                <ion-item>
+                    <ion-label position="floating">Apellido Casada</ion-label>
+                    <ion-input [(ngModel)]="docente.apellido_casada"></ion-input>
+                  </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+              <ion-col>
+                  <ion-item>
+                      <ion-label position="floating">Fecha Nacimiento</ion-label>
+                      <ion-input [(ngModel)]="docente.fecha_nacimiento"></ion-input>
+                    </ion-item>
+              </ion-col>
+              <ion-col>
+                  <ion-item>
+                      <ion-label position="floating">Lugar Nacimiento</ion-label>
+                      <ion-input [(ngModel)]="docente.lugar_nacimiento"></ion-input>
+                    </ion-item>
+              </ion-col>
+              <ion-col>
+                  <ion-item>
+                      <ion-label position="floating">Direccion</ion-label>
+                      <ion-input [(ngModel)]="docente.direccion"></ion-input>
+                    </ion-item>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <ion-item>
+                        <ion-label position="floating">Estado civil</ion-label>
+                        <ion-input [(ngModel)]="docente.estado_civil"></ion-input>
+                      </ion-item>
+                </ion-col>
+                <ion-col>
+                    <ion-item>
+                        <ion-label position="floating">Genero</ion-label>
+                        <ion-input [(ngModel)]="docente.genero"></ion-input>
+                      </ion-item>
+                </ion-col>
+                <ion-col>
+                    <ion-item>
+                        <ion-label position="floating">DPI</ion-label>
+                        <ion-input [(ngModel)]="docente.dpi"></ion-input>
+                      </ion-item>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                  <ion-col>
+                      <ion-item>
+                          <ion-label position="floating">Nit</ion-label>
+                          <ion-input [(ngModel)]="docente.nit"></ion-input>
+                        </ion-item>
+                  </ion-col>
+                  <ion-col>
+                      <ion-item>
+                          <ion-label position="floating">Teléfono</ion-label>
+                          <ion-input [(ngModel)]="docente.telefono"></ion-input>
+                        </ion-item>
+                  </ion-col>
+                  <ion-col>
+                      <ion-item>
+                          <ion-label position="floating">Correo Electronico</ion-label>
+                          <ion-input [(ngModel)]="docente.correo_electronico"></ion-input>
+                        </ion-item>
+                  </ion-col>
+                </ion-row>
+</ion-content>
