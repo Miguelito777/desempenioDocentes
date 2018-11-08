@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use App\TcAspectoTecnico;
 use App\TcTipoAspectoTecnico;
+use App\TcTipoAspectoActitudinal;
 use App\TtTecnicoDocente;
+use App\TcDocente;
+
 use Illuminate\Http\Request;
 
 class desempenioController extends Controller
@@ -21,16 +24,38 @@ class desempenioController extends Controller
         }
         return response()->json($TiposAspectosTecnicos);
     }
-    public function createAspectos(Request $request)
+    public function createAspectoDocente(Request $request)
     {
-        $aspectosCreados = array();
-        foreach ($request as $aspectoTecnico) {
-            $aspecto = $aspectoTecnico;//TcAspectoTecnico::create($aspectoTecnico);
-            array_push($aspectosCreados, $aspecto);
-        }
-        //$aspecto = TtTecnicoDocente::create($request->all());
+        $aspecto = TtTecnicoDocente::create($request->all());
 
-        return response()->json($aspectosCreados, 201);
+        return response()->json($aspecto, 201);
+    }
+    public function createTipoAspectoTecnico(Request $request)
+    {
+        $tipoAspecto = TcTipoAspectoTecnico::create($request->all());
+
+        return response()->json($tipoAspecto, 201);
+    }
+    public function createAspectoTecnico(Request $request)
+    {
+        $aspecto = TcAspectoTecnico::create($request->all());
+
+        return response()->json($aspecto, 201);
+    }
+    public function getDocentes()
+    {
+        return response()->json(TcDocente::all());
+    }
+
+    public function createAspectoActitudinal(Request $request)
+    {
+        $aspecto = TcTipoAspectoActitudinal::create($request->all());
+
+        return response()->json($aspecto, 201);
+    }
+    public function getAspectosActitudinales()
+    {
+        return response()->json(TcTipoAspectoActitudinal::all());
     }
     /*public function showAllAlmacen()
     {

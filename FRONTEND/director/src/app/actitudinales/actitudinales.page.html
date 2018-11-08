@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Datos Actitudinales
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+        <ion-col>
+            <ion-item>
+                <ion-label>Aspecto Actitudinal</ion-label>
+                <ion-select interface="popover" placeholder="" [(ngModel)]="actitudinal.aspecto">
+                  <ion-select-option *ngFor="let cr of actitudinales" [value]="cr" >{{cr.tipo_aspecto_actitudinal}}</ion-select-option>
+                </ion-select>
+              </ion-item>
+        </ion-col>
+        <ion-col>
+            <ion-item>
+                <ion-label>Nivel</ion-label>
+                <ion-select interface="popover" placeholder="" [(ngModel)]="actitudinal.nivel">
+                  <ion-select-option *ngFor="let cr of nuveles" [value]="cr" >{{cr.nivel}}</ion-select-option>
+                </ion-select>
+                <ion-buttons slot="end">
+                    <ion-button (click)="addActitudinal()">
+                      <ion-icon name="add-circle"></ion-icon>
+                    </ion-button>
+                  </ion-buttons>
+              </ion-item>
+        </ion-col>
+        <ion-col>
+
+        </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-list>
+    <ion-item *ngFor="let cr of actitudinalesSelect">
+      <ion-icon name="apps" slot="start"></ion-icon>
+      <b>{{cr.aspecto.tipo_aspecto_actitudinal}}</b> : {{cr.nivel.nivel}} 
+      <div class="item-note" slot="end">
+        <ion-button shape="round" color="danger" (click)="deleteAlmacen(cr.id)">
+          <ion-icon name="trash"></ion-icon>
+        </ion-button>
+        <!-- <ion-button shape="round" color="warning" routerLink="/AlmacenCU/{{cr.id}}">
+          <ion-icon name="create"></ion-icon>
+        </ion-button> -->
+      </div>
+    </ion-item>
+  </ion-list>
+</ion-content>

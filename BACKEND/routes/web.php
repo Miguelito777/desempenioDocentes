@@ -19,8 +19,15 @@ $router->group(['prefix' => 'api'], function () use ($router) {
     
     $router->get('getAspectosTecnicos',  ['uses' => 'desempenioController@getAspectosTecnicos']);    
     $router->get('getTipoAspectosTecnicos',  ['uses' => 'desempenioController@getTipoAspecTecWithAspect']);
-    $router->post('tecnico-docente', ['uses' => 'desempenioController@createAspectos']);
+    $router->post('tecnico-docente', ['uses' => 'desempenioController@createAspectoDocente']);
+    $router->post('tipo-aspecto-tecnico', ['uses' => 'desempenioController@createTipoAspectoTecnico']);
+    $router->post('aspecto-tecnico', ['uses' => 'desempenioController@createAspectoTecnico']);
+    $router->get('docentes',  ['uses' => 'desempenioController@getDocentes']);    
+    $router->post('aspecto-actitudinal', ['uses' => 'desempenioController@createAspectoActitudinal']);
+    $router->get('getAspectosActitudinales',  ['uses' => 'desempenioController@getAspectosActitudinales']);    
+    $router->post('aspecto-actitudinal', ['uses' => 'desempenioController@createAspectoActitudinal']);
 
+    
     /*$router->get('grupo-sanguineo',  ['uses' => 'GrupoSanguineoController@showAllGrupoSanguineo']);
   
     $router->get('grupo-sanguineo/{id}', ['uses' => 'GrupoSanguineoController@showOneGrupoSanguineo']);
