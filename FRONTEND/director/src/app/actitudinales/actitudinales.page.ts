@@ -63,6 +63,26 @@ export class ActitudinalesPage implements OnInit {
   }
   addActitudinal(){
     this.actitudinalesSelect.push(this.actitudinal);
-    console.log(this.actitudinalesSelect); 
+    var actitudinalDocente = {
+      actitudinal_docente: this.actitudinal.nivel.nivel,
+      id_aspecto_actitudinal:this.actitudinal.aspecto.id,
+      id_docente:1
+    }
+    this.insActitudinal(actitudinalDocente); 
+  }
+  async insActitudinal(actitudinalDocente){
+    const loading = await this.loadingController.create({
+      message: 'Guardando Actitudianl ',
+    });
+    await loading.present();
+    await this.api.insActitudinalDocente(actitudinalDocente)
+    .subscribe(res => {
+      console.log(res);
+      loading.dismiss();  
+      //let id = res['id'];
+        //this.router.navigate(['/Catalogos']);
+      }, (err) => {
+        console.log(err);
+      });
   }
 }
