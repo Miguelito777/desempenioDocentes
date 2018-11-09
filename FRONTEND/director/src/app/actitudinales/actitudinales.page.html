@@ -43,12 +43,12 @@
       <ion-icon name="apps" slot="start"></ion-icon>
       <b>{{cr.aspecto.tipo_aspecto_actitudinal}}</b> : {{cr.nivel.nivel}} 
       <div class="item-note" slot="end">
-        <ion-button shape="round" color="danger" (click)="deleteAlmacen(cr.id)">
+        <!-- <ion-button shape="round" color="danger" (click)="deleteAlmacen(cr.id)">
           <ion-icon name="trash"></ion-icon>
-        </ion-button>
-        <!-- <ion-button shape="round" color="warning" routerLink="/AlmacenCU/{{cr.id}}">
-          <ion-icon name="create"></ion-icon>
         </ion-button> -->
+        <ion-button shape="round" color="warning" (click)="insActitudinal()">
+          <ion-icon name="create"></ion-icon>
+        </ion-button>
       </div>
     </ion-item>
   </ion-list>

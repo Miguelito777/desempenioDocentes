@@ -477,6 +477,13 @@ export class RestApiService {
         map(this.extractData),
         catchError(this.handleError));
     }
+    insActitudinalDocente(data): Observable<any> {
+      const url = `${apiUrl}aspecto-actitudinal-docente`;
+      return this.http.post(url, data, httpOptions)
+        .pipe(
+          catchError(this.handleError)
+        );
+    }
   private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
       // A client-side or network error occurred. Handle it accordingly.

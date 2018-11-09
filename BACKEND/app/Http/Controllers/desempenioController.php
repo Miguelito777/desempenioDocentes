@@ -6,6 +6,7 @@ use App\TcAspectoTecnico;
 use App\TcTipoAspectoTecnico;
 use App\TcTipoAspectoActitudinal;
 use App\TtTecnicoDocente;
+use App\TcActitudinalDocente;
 use App\TcDocente;
 
 use Illuminate\Http\Request;
@@ -47,16 +48,26 @@ class desempenioController extends Controller
         return response()->json(TcDocente::all());
     }
 
-    public function createAspectoActitudinal(Request $request)
+    public function createTipoAspectoActitudinal(Request $request)
     {
         $aspecto = TcTipoAspectoActitudinal::create($request->all());
 
         return response()->json($aspecto, 201);
     }
-    public function getAspectosActitudinales()
+    public function getTiposAspectosActitudinales()
     {
         return response()->json(TcTipoAspectoActitudinal::all());
     }
+
+    public function createAspectoActitudinal(Request $request)
+    {
+        $aspecto = TcActitudinalDocente::create($request->all());
+
+        return response()->json($aspecto, 201);
+    }
+
+
+
     /*public function showAllAlmacen()
     {
         return response()->json(TcAlmacen::all());
